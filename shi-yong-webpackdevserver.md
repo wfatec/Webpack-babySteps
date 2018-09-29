@@ -4,13 +4,13 @@
 
 首先进行安装，执行
 
-```
+```text
 yarn add webpack-dev-server -D
 ```
 
 在webpack.config.js中加入
 
-```js
+```javascript
 // webpack开发服务器
     devServer:{
         //设置开发服务起的目标地址
@@ -26,14 +26,15 @@ yarn add webpack-dev-server -D
 
 在package.json的script下增加
 
-```
+```text
 "start": "webpack-dev-server --config=config/webpack.config.js",
 ```
 
 执行
 
-```
+```text
 npm start
 ```
 
 这时我们就能在8088端口下实时调试我们的代码了
+

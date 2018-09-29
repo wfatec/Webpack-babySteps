@@ -4,7 +4,7 @@
 
 ## 安装css-loader
 
-```
+```text
 yarn add css-loader -D
 ```
 
@@ -12,14 +12,13 @@ css-loader作用是让我们的css文件能够用`import`的方式实现模块�
 
 ## 安装style-loader
 
-```
+```text
 yarn add style-loader -D
 ```
 
-`style-loader`能够让`css-loader`载入的css文件以`<style></style>`的形式插入到`<header></header>`中。
-配置module.rules
+`style-loader`能够让`css-loader`载入的css文件以`<style></style>`的形式插入到`<header></header>`中。 配置module.rules
 
-```js
+```javascript
 {
     //匹配css文件
     test:/\.css$/,
@@ -42,7 +41,7 @@ body{
 
 在index.js中加入
 
-```js
+```javascript
 import './index.css'
 ```
 
@@ -54,27 +53,24 @@ import './index.css'
 
 webpack通过`postcss-loader`来对`.css`文件进行处理，并添加在`style-loader`和`css-loader`之后。首先进行安装：
 
-```
+```text
 yarn add -D postcss-loader
 ```
 
 postcss有一些非常好用的插件：
 
-1. Autoprefixer
-其作用是为 CSS 中的属性添加浏览器特定的前缀。为了兼容不同浏览器的不同版本，在编写 CSS 样式规则声明时通常需要添加额外的带前缀的属性。这是一项繁琐而无趣的工作。Autoprefixer 可以自动的完成这项工作。
-
-2. cssnext
-cssnext 插件允许开发人员在当前的项目中使用 CSS 将来版本中可能会加入的新特性。cssnext 负责把这些新特性转译成当前浏览器中可以使用的语法。从实现角度来说，cssnext 是一系列与 CSS 将来版本相关的 PostCSS 插件的组合。比如，***cssnext 中已经包含了对 Autoprefixer 的使用***，因此使用了 cssnext 就不再需要使用 Autoprefixer。
+1. Autoprefixer 其作用是为 CSS 中的属性添加浏览器特定的前缀。为了兼容不同浏览器的不同版本，在编写 CSS 样式规则声明时通常需要添加额外的带前缀的属性。这是一项繁琐而无趣的工作。Autoprefixer 可以自动的完成这项工作。
+2. cssnext cssnext 插件允许开发人员在当前的项目中使用 CSS 将来版本中可能会加入的新特性。cssnext 负责把这些新特性转译成当前浏览器中可以使用的语法。从实现角度来说，cssnext 是一系列与 CSS 将来版本相关的 PostCSS 插件的组合。比如，_**cssnext 中已经包含了对 Autoprefixer 的使用**_，因此使用了 cssnext 就不再需要使用 Autoprefixer。
 
 我们一步到位直接安装postcss-cssnext
 
-```
+```text
 yarn add -D postcss-cssnext
 ```
 
-在根目录下新建`postcss.config.js`作为postcss的配置文件，postcss-loader会首先优先使用webpack配置文件中的loader选项，然后再检查`postcss.config.js`，将postcss的配置文件单独分离出来有助于构建意图更为清晰(.babelrc也是一样)。`postcss.config.js`内容为：
+在根目录下新建`postcss.config.js`作为postcss的配置文件，postcss-loader会首先优先使用webpack配置文件中的loader选项，然后再检查`postcss.config.js`，将postcss的配置文件单独分离出来有助于构建意图更为清晰\(.babelrc也是一样\)。`postcss.config.js`内容为：
 
-```js
+```javascript
 module.exports = {
     plugins: {
         //兼容css4语法
@@ -82,3 +78,4 @@ module.exports = {
     }
 }
 ```
+

@@ -2,7 +2,7 @@
 
 我们在dist下新建一个index.html文件，内容为
 
-```html
+```markup
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,16 +20,15 @@
 
 将html在浏览器中打开即可。
 
-我们之前通过手写html文件，并将打包后的main.js引入，但是如果出现类似打包文件名称发生变更的情况，就需要重新更改引入项，有没有什么方法能自动生成html文件，并自动引入依赖文件呢？答案就是html-webpack-plugin。
-安装html-webpack-plugin：
+我们之前通过手写html文件，并将打包后的main.js引入，但是如果出现类似打包文件名称发生变更的情况，就需要重新更改引入项，有没有什么方法能自动生成html文件，并自动引入依赖文件呢？答案就是html-webpack-plugin。 安装html-webpack-plugin：
 
-```
+```text
 yarn add html-webpack-plugin -D
 ```
 
 在public文件夹下新建index.html作为模板文件，内容为：
 
-```html
+```markup
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +45,7 @@ yarn add html-webpack-plugin -D
 
 放入favicon.ico文件，webpack.config.js加入html-webpack-plugin插件
 
-```js
+```javascript
 const path = require("path")
 //自动生成html文件并注入script标签引用
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -88,7 +87,7 @@ module.exports = {
 
 打包后的dist/index.html为
 
-```html
+```markup
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,3 +103,4 @@ module.exports = {
 ```
 
 我们可以看到JS和icon文件自动被引入进来
+

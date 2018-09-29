@@ -4,7 +4,7 @@
 
 在根目录下创建config文件夹，之后新建webpack.dev.js和webpack.prod.js分别作为开发环境和生产环境下的配置文件。我们主要以开发环境的配置为主，生产环境的配置其实大同小异。将webpack.dev.js修改为
 
-```js
+```javascript
 const path = require("path")
 module.exports = {
     mode:'development',
@@ -25,8 +25,9 @@ module.exports = {
 
 build命令修改为:
 
-```
+```text
 "build": "webpack --config=config/webpack.config.js"
 ```
 
 我们可以看到dist文件下出现了我们打包后的main.js文件。
+

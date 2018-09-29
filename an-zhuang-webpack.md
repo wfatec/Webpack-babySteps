@@ -1,12 +1,12 @@
 # 安装webpack
 
-```
+```text
 yarn add webpack -D
 ```
 
 在package.json中看到
 
-```json
+```javascript
 {
   …
   "devDependencies": {
@@ -14,3 +14,4 @@ yarn add webpack -D
   }
 }
 ```
+

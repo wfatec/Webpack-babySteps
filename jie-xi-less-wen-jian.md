@@ -4,13 +4,13 @@
 
 1. 安装[less](http://lesscss.org/)和[less-loader](https://github.com/webpack-contrib/less-loader)
 
-```
+```text
 yarn add -D less less-loader
 ```
 
-2. 配置module.rules
+1. 配置module.rules
 
-```js
+```javascript
 {
     //匹配less文件
     test:/\.less$/,
@@ -30,3 +30,4 @@ yarn add -D less less-loader
     })
 }
 ```
+

@@ -1,7 +1,6 @@
 # 文件加载
 
-我们在开发过程中时常会用到一些文件资源，例如图片等。这时就要用到file-loader或url-loader.
-[file-loader](https://webpack.docschina.org/loaders/file-loader/)可以处理文件对象，并将处理后的文件变成文件内容的MD5 hash，后缀名为源文件的后缀名。[url-loader](https://webpack.docschina.org/loaders/url-loader/) 封装了file-loader，其工作时会分为两类情况：
+我们在开发过程中时常会用到一些文件资源，例如图片等。这时就要用到file-loader或url-loader. [file-loader](https://webpack.docschina.org/loaders/file-loader/)可以处理文件对象，并将处理后的文件变成文件内容的MD5 hash，后缀名为源文件的后缀名。[url-loader](https://webpack.docschina.org/loaders/url-loader/) 封装了file-loader，其工作时会分为两类情况：
 
 1. 文件大小小于limit参数，url-loader将会把文件转为DataURL
 2. 文件大小大于limit，url-loader会调用file-loader进行处理，参数也会直接传给file-loader。因此我们只需要安装url-loader即可。
@@ -10,13 +9,13 @@
 
 ## 安装url-loader
 
-```
+```text
 yarn add -D url-loader
 ```
 
-2. 配置mudule.rules
+1. 配置mudule.rules
 
-```js
+```javascript
 {
     //匹配png jpg gif类型的文件,忽略大小写
     test: /\.(png|jpg|gif)$/i,
@@ -59,9 +58,9 @@ yarn add -D url-loader
 }
 ```
 
-接下来在src/img放入一张图片，命名为saber.jpg(可任意命名)，在src/App.js中引入
+接下来在src/img放入一张图片，命名为saber.jpg\(可任意命名\)，在src/App.js中引入
 
-```js
+```javascript
 import React from "react";
 import ReactDOM from "react-dom";
 import Saber from './img/saber.jpg';
@@ -76,10 +75,11 @@ export default App;
 ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
-此时运行`npm run build`，发现控制台报错，大意是缺少一些模块，然后在node_modules/url-loader和`node_modules`下查找，发现并没有`file-loader`的依赖，因此估计是缺少`file-loader`，那么尝试一下安装`file-loader`:
+此时运行`npm run build`，发现控制台报错，大意是缺少一些模块，然后在node\_modules/url-loader和`node_modules`下查找，发现并没有`file-loader`的依赖，因此估计是缺少`file-loader`，那么尝试一下安装`file-loader`:
 
-```
+```text
 yarn add -D file-loader
 ```
 
 之后运行`npm run build`，一切正常，我们的图片也被正常打包到`dist/img`下，命名为`saber.41ba48fec44b8185322755f64d4f3af7.jpg`
+

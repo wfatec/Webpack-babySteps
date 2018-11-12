@@ -17,6 +17,6 @@ output:{
 此时所有静态资源会默认指向`/subfold`, 如果不确定最终路径，则可以传入相对路径：`publicPath: './'`。这时项目静态资源文件的加载路径默认为所在目录的相对路径。
 
 {% hint style="info" %}
-注意：当设置了`publicPath 属性后，会导致 webpack-dev-server出现无法热更新的情况，因此，在开发环境下可以先注释掉该属性，在真正发布时才使用。`
+注意： `当设置了 publicPath 属性后，会导致 webpack-dev-server出现无法热更新的情况，因此，在开发环境下可以先注释掉该属性，在真正发布时才使用。`
 {% endhint %}
 
